@@ -24,3 +24,5 @@ classes
 tmp
 
 TestData
+gpg.key
+gpg.pub
