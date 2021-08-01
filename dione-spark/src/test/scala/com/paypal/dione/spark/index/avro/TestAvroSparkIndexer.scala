@@ -1,7 +1,5 @@
 package com.paypal.dione.spark.index.avro
 
-import java.io.File
-
 import com.paypal.dione.SparkCleanTestDB
 import com.paypal.dione.hdfs.index.HdfsIndexContants._
 import com.paypal.dione.hdfs.index.HdfsIndexerMetadata
@@ -13,6 +11,8 @@ import org.apache.hadoop.fs.Path
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import org.junit.jupiter.api._
+
+import java.io.File
 
 object TestAvroSparkIndexer extends SparkCleanTestDB {
 

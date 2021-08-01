@@ -4,13 +4,12 @@ import com.paypal.dione.avro.utils.GenericRecordMap
 import com.paypal.dione.hdfs.index.HdfsIndexer
 import com.paypal.dione.hdfs.index.parquet.ParquetIndexer
 import com.paypal.dione.spark.index.{IndexManagerFactory, IndexSpec, SparkIndexer}
+import org.apache.avro.Schema
 import org.apache.avro.generic.GenericRecord
-import org.apache.avro.{Schema, SchemaBuilder}
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.avro.SchemaConverters
-import org.apache.spark.sql.catalyst.InternalRow
 import org.apache.spark.sql.types.StructType
 
 

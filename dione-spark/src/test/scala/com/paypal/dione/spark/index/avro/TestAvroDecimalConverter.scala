@@ -2,8 +2,8 @@ package com.paypal.dione.spark.index.avro
 
 import com.paypal.dione.SparkCleanTestDB
 import com.paypal.dione.spark.index.{IndexManager, IndexSpec}
-import org.junit.jupiter.api.{Assertions, Test}
 import org.junit.jupiter.api.function.Executable
+import org.junit.jupiter.api.{Assertions, Test}
 
 
 object TestAvroDecimalConverter extends SparkCleanTestDB {

@@ -6,7 +6,7 @@ import com.paypal.dione.hdfs.index.HdfsIndexerMetadata
 import com.paypal.dione.hdfs.index.avro.AvroIndexer
 import com.paypal.dione.kvstorage.hadoop.avro.AvroHashBtreeStorageFolderReader
 import com.paypal.dione.spark.avro.btree.SparkAvroBtreeUtils
-import com.paypal.dione.spark.index.{IndexManager, IndexManagerUtils, IndexSpec}
+import com.paypal.dione.spark.index.{IndexManager, IndexSpec}
 import org.apache.hadoop.fs.Path
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import org.junit.jupiter.api._

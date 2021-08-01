@@ -1,7 +1,5 @@
 package org.apache.spark.sql.hive
 
-import java.io.{DataInputStream, DataOutputStream, ObjectInputStream, ObjectOutputStream}
-
 import com.esotericsoftware.kryo.io.{Input, Output}
 import com.esotericsoftware.kryo.{Kryo, KryoSerializable}
 import org.apache.hadoop.conf.Configuration
@@ -16,6 +14,8 @@ import org.apache.spark.sql.hive.client.HiveClientImpl
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.util.Utils
+
+import java.io.{DataInputStream, DataOutputStream, ObjectInputStream, ObjectOutputStream}
 
 /**
  * Access to protected functions from spark.sql.hive

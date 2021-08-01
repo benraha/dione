@@ -1,7 +1,5 @@
 package com.paypal.dione.kvstorage.hadoop.avro
 
-import java.io.File
-
 import com.paypal.dione.avro.hadoop.file.AvroBtreeFile
 import com.paypal.dione.avro.hadoop.file.AvroBtreeFile.{BufferedWriter, Writer}
 import com.paypal.dione.avro.utils.AvroExtensions
@@ -13,6 +11,7 @@ import org.apache.hadoop.fs.{FileSystem, Path}
 import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
 
+import java.io.File
 import scala.collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
 

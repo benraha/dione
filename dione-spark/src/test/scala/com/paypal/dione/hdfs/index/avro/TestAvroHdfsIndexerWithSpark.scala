@@ -1,7 +1,5 @@
 package com.paypal.dione.hdfs.index.avro
 
-import java.io.File
-
 import com.paypal.dione.SparkCleanTestDB
 import com.paypal.dione.avro.utils.AvroExtensions
 import com.paypal.dione.hdfs.index.HdfsIndexContants._
@@ -9,13 +7,14 @@ import com.paypal.dione.hdfs.index.HdfsIndexerMetadata
 import com.paypal.dione.hdfs.index.avro.TestAvroHdfsIndexerWithSpark.baseTestPath
 import com.paypal.dione.kvstorage.hadoop.avro.{AvroBtreeStorageFileReader, AvroBtreeStorageFileWriter}
 import com.paypal.dione.spark.index.avro.SeqSplitTest.fs
-import org.apache.avro.{Schema, SchemaBuilder}
 import org.apache.avro.generic.{GenericData, GenericRecord}
+import org.apache.avro.{Schema, SchemaBuilder}
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import org.junit.jupiter.api._
 
+import java.io.File
 import scala.collection.JavaConversions._
 
 object TestAvroHdfsIndexerWithSpark extends SparkCleanTestDB {

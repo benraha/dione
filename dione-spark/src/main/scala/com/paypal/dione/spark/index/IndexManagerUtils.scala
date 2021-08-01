@@ -1,23 +1,23 @@
 package com.paypal.dione.spark.index
 
-import java.util.UUID
 import com.paypal.dione.hdfs.index.HdfsIndexContants._
 import com.paypal.dione.spark.index.IndexManager.PARTITION_DEF_COLUMN
 import com.paypal.dione.spark.index.avro.AvroSparkIndexer
 import com.paypal.dione.spark.index.parquet.ParquetSparkIndexer
 import com.paypal.dione.spark.index.sequence.SeqFileSparkIndexer
 import org.apache.hadoop.conf.Configuration
-import org.apache.hadoop.fs.{FileStatus, FileSystem, Path}
+import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.spark.dione.Metrics
-import org.apache.spark.sql.catalyst.{InternalRow, TableIdentifier}
+import org.apache.spark.sql.catalyst.TableIdentifier
 import org.apache.spark.sql.catalyst.catalog.CatalogTable
 import org.apache.spark.sql.catalyst.encoders.RowEncoder
-import org.apache.spark.sql.catalyst.expressions.JoinedRow
 import org.apache.spark.sql.functions.col
 import org.apache.spark.sql.hive.SerializableConfiguration
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import org.slf4j.LoggerFactory
+
+import java.util.UUID
 
 object IndexManagerUtils {
 
@@ -149,7 +149,6 @@ object IndexManagerUtils {
 
     // sample:
     val tmpPath = "/tmp/" + UUID.randomUUID().toString // TODO really in /tmp ?
-    //import com.databricks.spark.avro._
     val codec = spark.conf.getOption("spark.sql.avro.compression.codec")
     spark.conf.set("spark.sql.avro.compression.codec", "deflate")
     indexDF.write.format("avro").save(tmpPath)

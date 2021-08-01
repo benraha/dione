@@ -1,6 +1,7 @@
 package com.paypal.dione.avro.utils
 
 import org.apache.avro.generic.GenericRecord
+
 import scala.collection.JavaConversions._
 
 case class GenericRecordMap(gr: GenericRecord) extends Map[String, AnyRef] {

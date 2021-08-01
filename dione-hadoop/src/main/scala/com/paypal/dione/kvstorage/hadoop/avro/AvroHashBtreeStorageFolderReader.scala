@@ -1,7 +1,7 @@
 package com.paypal.dione.kvstorage.hadoop.avro
 
 import com.paypal.dione.kvstorage.hadoop.KVStorageFileReader
-import org.apache.avro.generic.{GenericData, GenericRecord}
+import org.apache.avro.generic.GenericRecord
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
 import org.slf4j.LoggerFactory

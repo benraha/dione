@@ -1,7 +1,5 @@
 package com.paypal.dione.spark.index.sequence
 
-import java.util.Properties
-
 import com.paypal.dione.hdfs.index.sequence.SequenceFileIndexer
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.hive.serde2.Deserializer
@@ -12,6 +10,8 @@ import org.apache.spark.sql.catalyst.util.DateTimeUtils
 import org.apache.spark.sql.hive.SparkSqlHiveUtils
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.unsafe.types.UTF8String
+
+import java.util.Properties
 
 object SeqFileUtils {
 

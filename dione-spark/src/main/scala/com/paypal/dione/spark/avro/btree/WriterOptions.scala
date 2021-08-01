@@ -1,14 +1,12 @@
 package com.paypal.dione.spark.avro.btree
 
-import java.io.{ByteArrayInputStream, DataInputStream}
-import java.util.Base64
-
 import org.apache.avro.file.CodecFactory
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
-import org.apache.spark.sql.SaveMode
 import org.apache.spark.sql.types.StructType
 
+import java.io.{ByteArrayInputStream, DataInputStream}
+import java.util.Base64
 import scala.util.Try
 
 /**
