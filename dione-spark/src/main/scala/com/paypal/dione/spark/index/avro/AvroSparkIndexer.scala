@@ -37,12 +37,10 @@ case class AvroSparkIndexer(@transient spark: SparkSession) extends SparkIndexer
   }
 
   def convert(gr: GenericRecord): Seq[Any] = {
-    val a = converter.deserialize(gr).asInstanceOf[InternalRow].toSeq(fieldsSchema)
-    a.map {
+    converter.deserialize(gr).asInstanceOf[InternalRow].toSeq(fieldsSchema).map {
       case f: UTF8String => f.toString
       case f => f
     }
-//    a
   }
 
   def convertMap(gr: GenericRecord): Map[String, Any] =

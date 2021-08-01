@@ -8,11 +8,13 @@ import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
 import org.apache.spark.Partitioner
 import org.apache.spark.sql.avro.{AvroDeserializer, SchemaConverters}
+import org.apache.spark.sql.catalyst.InternalRow
 import org.apache.spark.sql.catalyst.encoders.RowEncoder
 import org.apache.spark.sql.catalyst.expressions.GenericRow
 import org.apache.spark.sql.functions.{array, col, expr}
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
+import org.apache.spark.unsafe.types.UTF8String
 import org.slf4j.LoggerFactory
 
 import scala.collection.mutable
@@ -161,7 +163,11 @@ object SparkAvroBtreeUtils {
               val nxt = kvIt.head
               // taking the dsDF's data without the last two fields (keyhash, prthash)
               // and the value record from the avro-btree file
-              Iterator(Row.fromSeq(row.toSeq.slice(0, row.size - 2) ++ converter.deserialize(nxt._2).asInstanceOf[GenericRow].toSeq))
+              Iterator(Row.fromSeq(row.toSeq.slice(0, row.size - 2) ++
+                converter.deserialize(nxt._2).asInstanceOf[InternalRow].toSeq(indexTableValueSchema).map {
+                  case f: UTF8String => f.toString
+                  case f => f
+                }))
             }
           })
         }
